@@ -18,7 +18,7 @@
     Author    : seb! <sebi@sebi.one.pl>
     License   : MIT
 #>
-function Connect-Vpn (
+Function Connect-Vpn (
       [Parameter(Mandatory=$true)][String] $CfgFile
     , [Parameter(Mandatory=$true)][String] $KeyFile )
 {
@@ -54,7 +54,7 @@ function Connect-Vpn (
     Author    : seb! <sebi@sebi.one.pl>
     License   : MIT
 #>
-function Add-VpnConnectionTriggers(
+Function Add-VpnConnectionTriggers(
       [Parameter(Mandatory=$true)][String] $ConnectionName )
 {
     $current = Get-VpnConnectionTrigger "$connectionName" |

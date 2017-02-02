@@ -13,7 +13,7 @@
     Author:    seb! <sebi@sebi.one.pl>
     License:   MIT
 #>
-function Merge-ConfigurationFiles(
+Function Merge-ConfigurationFiles(
     [Parameter(Mandatory=$true)][String[]] $InFiles
     , [Parameter(Mandatory=$true)][String] $OutFile )
 {
