@@ -1,52 +1,37 @@
 ---
-external help file: map-drives-help.xml
-online version: https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-DriveMappings.md
+external help file: config-help.xml
+online version: https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Unprotect-Config.md
 schema: 2.0.0
 ---
 
-# Add-DriveMappings
+# Unprotect-Config
 
 ## SYNOPSIS
-This function adds network drive mappings.
+This function decrypts specified configuration file.
 
 ## SYNTAX
 
 ```
-Add-DriveMappings [-CfgFile] <String> [-KeyFile] <String> [<CommonParameters>]
+Unprotect-Config [-CfgFile] <String> [-KeyFile] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 This function in details:
-* takes a drives mappings list from a configuration file,
-* skips entries marked as disabled,
-* maps drive persistently for each entry left,
-* supports encrypted secret data.
+* searches for decryptable objects: drives, vault,
+* decrypts secret objects inside objects found,
+* it overwrites encrypted config file with the plain one.
 
 ## EXAMPLES
 
 ### Example 1
 ```
-PS C:\> Add-DriveMappings cfg.json encryption.key
+PS C:\> Unprotect-Config cfg.json encryption.key
 ```
 
-Maps network shares to drive letters. Pass your encryption.key file for secret data decryption.
+It expects encrypted cfg.json file. Takes the config file, decrypts it and stores its plain version in the same place.
 
-### Example 2 Sample content of the `cfg.json`
-```
-{
-    "drives": [
-        {
-            "local":  "<drive-letter>",
-            "secret":
-                { "remote":  "\\\\<share-host>\\<share-name>" },
-                "disabled": true
-        }
-    ]
-}
-```
-
-> Note that back-slashes in UNC paths should be escaped.
-> The values of the `secret` object properties **should be encrypted**.
+> Note, that after this operation sensitive data are readable. Now you can update your passwords and other secret data.
+> Don't forget to protect that file back. See [Protect-Config](Protect-Config.md).
 
 ## PARAMETERS
 
@@ -92,11 +77,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-DriveMappings.md](https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-DriveMappings.md)
+[https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Unprotect-Config.md](https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Unprotect-Config.md)
 
 [https://github.com/a4099181/vagrant-officeVM/blob/master/docs/New-EncryptionKey.md](https://github.com/a4099181/vagrant-officeVM/blob/master/docs/New-EncryptionKey.md)
 
 [https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Protect-Config.md](https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Protect-Config.md)
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/map-drives.psm1](https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/map-drives.psm1)
-
+[https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/config.psm1](https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/config.psm1)
