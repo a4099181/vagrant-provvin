@@ -1,3 +1,32 @@
+Function Invoke-GitConfig
+{
+<#
+    .SYNOPSIS
+    Applies local configuration for git repository.
+
+    .PARAMETER Json
+    A piece of the JSON file.
+
+    .PARAMETER RepositoryFolder
+    Git repository folder.
+
+    .INPUTS
+    PSCustomObject (Json object)
+#>
+    Param ( [Parameter(Mandatory=$true)][String] $RepositoryFolder,
+        [Parameter(Mandatory=$true, ValueFromPipeline=$true)] $Json
+     )
+
+    Process
+    {
+        $Json.psobject.Properties |
+            ForEach-Object {
+                $key = $_.Name.Replace( "-", ".")
+                git -C $RepositoryFolder config $key $_.Value
+            }
+    }
+}
+
 Function Copy-GitRepositories
 {
 <#
@@ -17,6 +46,9 @@ Function Copy-GitRepositories
     .PARAMETER CfgFile
     Configuration file.
 
+    .PARAMETER KeyFile
+    Encryption key file. If you don't have it, please see New-EncryptionKey.
+
     .PARAMETER DestinationFolder
     Destination folder for cloned repositories.
 
@@ -24,10 +56,18 @@ Function Copy-GitRepositories
     https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Copy-GitRepositories.md
 
     .LINK
+    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/New-EncryptionKey.md
+
+    .LINK
+    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Protect-Config.md
+
+    .LINK
     https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/git-clone.psm1
 #>
-    Param ( [Parameter(Mandatory=$true)][String] $CfgFile
-          , [String] $DestinationFolder = ( Join-Path $env:UserProfile 'MyProjects' ) )
+    Param (
+        [Parameter(Mandatory=$true)][String] $CfgFile,
+        [Parameter(Mandatory=$true)] [String] $KeyFile,
+        [String] $DestinationFolder = ( Join-Path $env:UserProfile 'MyProjects' ) )
 
     if ((Test-Path $DestinationFolder)-eq 0)
     {
@@ -43,5 +83,12 @@ Function Copy-GitRepositories
                           -NoNewWindow `
                           -PassThru `
                           -Wait
+
+            If ( $_.secret )
+            {
+                $_.secret | Decrypt $KeyFile
+                $subdir = ( [IO.FileInfo] ( [ URI ] $_.url).AbsolutePath ).BaseName
+                $_.secret | Invoke-GitConfig ( Join-Path $DestinationFolder $subdir )
+            }
         }
 }
