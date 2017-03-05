@@ -52,4 +52,3 @@
 
     Add-MpPreference -ExclusionPath $FilesList -ExclusionExtension $ExtensionsList
 }
-

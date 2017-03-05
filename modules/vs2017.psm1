@@ -142,4 +142,3 @@ Function Install-VisualStudio2017Packages
             ForEach-Object { cinst --limit-output --ignore-checksums --allow-empty-checksums -y $_.id }
     }
 }
-
