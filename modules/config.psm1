@@ -24,7 +24,7 @@
     https://github.com/a4099181/vagrant-provvin/blob/master/docs/Merge-ConfigurationFiles.md
 
     .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/config.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/modules/config.psm1
 
     .LINK
     http://www.newtonsoft.com/json/help/html/MergeJson.htm
@@ -83,7 +83,7 @@ Function Protect-Config
     https://github.com/a4099181/vagrant-provvin/blob/master/docs/Unprotect-Config.md
 
     .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/config.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/modules/config.psm1
 #>
 
 Param ( [Parameter(Mandatory=$true)][String] $CfgFile
@@ -132,7 +132,7 @@ Function Unprotect-Config
     https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md
 
     .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/config.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/modules/config.psm1
 #>
 
 Param ( [Parameter(Mandatory=$true)][String] $CfgFile

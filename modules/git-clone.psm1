@@ -62,7 +62,7 @@ Function Copy-GitRepositories
     https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md
 
     .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/git-clone.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/modules/git-clone.psm1
 #>
     Param (
         [Parameter(Mandatory=$true)][String] $CfgFile,

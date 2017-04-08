@@ -27,7 +27,7 @@ Function Add-DriveMappings
     https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md
 
     .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/map-drives.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/modules/map-drives.psm1
     #>
 
     Param(

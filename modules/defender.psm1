@@ -35,7 +35,7 @@
     https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-WindowsDefenderExclusions.md
 
     .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/defender.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/modules/defender.psm1
 #>
     Param ( [String[]] $ProcessesPaths = ( ${env:ProgramFiles(x86)}, $env:ProgramW6432 )
           , [String[]] $ProcessesList = ( 'msbuild.exe', 'devenv.exe', 'sqlcmd.exe', 'sqllocaldb.exe', 'sqlservr.exe', 'sqlwriter.exe')

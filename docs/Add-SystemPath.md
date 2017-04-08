@@ -59,4 +59,4 @@ Author: bryjamus \<bryjamus@gmail.com\>
 
 [https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-SystemPath.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-SystemPath.md)
 
-[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/extend-PATH-environment-variable.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/extend-PATH-environment-variable.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/modules/extend-PATH-environment-variable.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/modules/extend-PATH-environment-variable.psm1)

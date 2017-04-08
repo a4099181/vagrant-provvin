@@ -83,4 +83,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md)
 
-[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/config.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/config.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/modules/config.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/modules/config.psm1)

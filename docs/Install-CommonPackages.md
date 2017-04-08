@@ -74,6 +74,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-CommonPackages.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-CommonPackages.md)
 
-[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/chocolatey.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/chocolatey.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/modules/chocolatey.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/modules/chocolatey.psm1)
 
 [https://chocolatey.org/packages](https://chocolatey.org/packages)

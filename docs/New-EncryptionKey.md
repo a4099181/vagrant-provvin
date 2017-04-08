@@ -71,4 +71,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [https://github.com/a4099181/vagrant-provvin/blob/master/docs/New-EncryptionKey.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/New-EncryptionKey.md)
 
-[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/crypto.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/crypto.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/modules/crypto.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/modules/crypto.psm1)

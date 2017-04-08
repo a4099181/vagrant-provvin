@@ -142,4 +142,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-WindowsDefenderExclusions.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-WindowsDefenderExclusions.md)
 
-[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/defender.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/defender.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/modules/defender.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/modules/defender.psm1)

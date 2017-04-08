@@ -80,4 +80,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-VisualStudio2017Extensions.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-VisualStudio2017Extensions.md)
 
-[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vs2017.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vs2017.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/modules/vs2017.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/modules/vs2017.psm1)

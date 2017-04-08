@@ -111,4 +111,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-VpnConnectionTriggers.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-VpnConnectionTriggers.md)
 
-[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vpn.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vpn.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/modules/vpn.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/modules/vpn.psm1)

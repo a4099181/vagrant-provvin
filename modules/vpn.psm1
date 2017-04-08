@@ -30,7 +30,7 @@ Function Connect-Vpn
     https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md
 
     .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vpn.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/modules/vpn.psm1
 #>
     Param ( [Parameter(Mandatory=$true)][String] $CfgFile
           , [Parameter(Mandatory=$true)][String] $KeyFile
@@ -78,7 +78,7 @@ Function Add-VpnConnectionTriggers
     https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-VpnConnectionTriggers.md
 
     .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vpn.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/modules/vpn.psm1
 #>
     Param ( [Parameter(Mandatory=$true)][String] $ConnectionName
           , [String[]] $ExecutablePaths=( ${env:ProgramFiles(x86)}, $env:ProgramW6432 , $env:USERPROFILE, "$env:windir\System32" )

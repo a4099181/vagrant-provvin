@@ -79,7 +79,7 @@ Function New-EncryptionKey
     https://github.com/a4099181/vagrant-provvin/blob/master/docs/New-EncryptionKey.md
 
     .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/crypto.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/modules/crypto.psm1
 #>
 
 Param ( [Parameter(Mandatory=$true)][String] $InputFile )

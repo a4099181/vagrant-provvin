@@ -74,4 +74,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [https://github.com/a4099181/vagrant-provvin/blob/master/docs/Expand-DownloadedArchive.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Expand-DownloadedArchive.md)
 
-[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/download.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/download.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/modules/download.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/modules/download.psm1)

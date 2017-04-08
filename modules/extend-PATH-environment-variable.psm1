@@ -15,7 +15,7 @@ Function Add-SystemPath
     https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-SystemPath.md
 
     .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/extend-PATH-environment-variable.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/modules/extend-PATH-environment-variable.psm1
 
     .NOTES
     Author: bryjamus <bryjamus@gmail.com>

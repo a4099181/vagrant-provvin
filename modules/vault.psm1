@@ -27,7 +27,7 @@ Function Add-GenericWindowsCredentials
     https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md
 
     .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vault.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/modules/vault.psm1
 #>
     Param ( [Parameter(Mandatory=$true)][String] $CfgFile
           , [Parameter(Mandatory=$true)][String] $KeyFile )
@@ -82,7 +82,7 @@ Function Add-WindowsCredentials
     https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md
 
     .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vault.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/modules/vault.psm1
 #>
     Param ( [Parameter(Mandatory=$true)][String] $CfgFile
           , [Parameter(Mandatory=$true)][String] $KeyFile )

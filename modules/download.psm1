@@ -17,7 +17,7 @@ Function Expand-DownloadedArchive
     https://github.com/a4099181/vagrant-provvin/blob/master/docs/Expand-DownloadedArchive.md
 
     .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/download.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/modules/download.psm1
 #>
     Param (
         [Parameter(Mandatory=$true)][String] $CfgFile )
