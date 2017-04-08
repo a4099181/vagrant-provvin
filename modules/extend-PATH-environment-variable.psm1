@@ -12,10 +12,10 @@ Function Add-SystemPath
     Array of paths to add.
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-SystemPath.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-SystemPath.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/extend-PATH-environment-variable.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/extend-PATH-environment-variable.psm1
 
     .NOTES
     Author: bryjamus <bryjamus@gmail.com>

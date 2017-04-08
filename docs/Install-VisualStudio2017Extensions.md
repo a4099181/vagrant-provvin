@@ -1,6 +1,6 @@
 ---
 external help file: vs2017-help.xml
-online version: https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Install-VisualStudio2017Extensions.md
+online version: https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-VisualStudio2017Extensions.md
 schema: 2.0.0
 ---
 
@@ -78,6 +78,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Install-VisualStudio2017Extensions.md](https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Install-VisualStudio2017Extensions.md)
+[https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-VisualStudio2017Extensions.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-VisualStudio2017Extensions.md)
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/vs2017.psm1](https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/vs2017.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vs2017.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vs2017.psm1)

@@ -18,16 +18,16 @@ Function Add-GenericWindowsCredentials
     Encryption key file. If you don't have it, please see New-EncryptionKey.
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-GenericWindowsCredentials.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-GenericWindowsCredentials.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/New-EncryptionKey.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/New-EncryptionKey.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Protect-Config.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/vault.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vault.psm1
 #>
     Param ( [Parameter(Mandatory=$true)][String] $CfgFile
           , [Parameter(Mandatory=$true)][String] $KeyFile )
@@ -73,16 +73,16 @@ Function Add-WindowsCredentials
     Encryption key file. If you don't have it, please see New-EncryptionKey.
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-WindowsCredentials.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-WindowsCredentials.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/New-EncryptionKey.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/New-EncryptionKey.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Protect-Config.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/vault.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vault.psm1
 #>
     Param ( [Parameter(Mandatory=$true)][String] $CfgFile
           , [Parameter(Mandatory=$true)][String] $KeyFile )

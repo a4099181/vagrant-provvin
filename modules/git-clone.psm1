@@ -53,16 +53,16 @@ Function Copy-GitRepositories
     Destination folder for cloned repositories.
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Copy-GitRepositories.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Copy-GitRepositories.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/New-EncryptionKey.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/New-EncryptionKey.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Protect-Config.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/git-clone.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/git-clone.psm1
 #>
     Param (
         [Parameter(Mandatory=$true)][String] $CfgFile,

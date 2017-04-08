@@ -15,10 +15,10 @@ Function Install-CommonPackages
     Configuration file.
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Install-CommonPackages.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-CommonPackages.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/chocolatey.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/chocolatey.psm1
 
     .LINK
     https://chocolatey.org/packages

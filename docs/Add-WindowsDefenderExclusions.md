@@ -1,6 +1,6 @@
 ---
 external help file: defender-help.xml
-online version: https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-WindowsDefenderExclusions.md
+online version: https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-WindowsDefenderExclusions.md
 schema: 2.0.0
 ---
 
@@ -140,6 +140,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-WindowsDefenderExclusions.md](https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-WindowsDefenderExclusions.md)
+[https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-WindowsDefenderExclusions.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-WindowsDefenderExclusions.md)
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/defender.psm1](https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/defender.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/defender.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/defender.psm1)

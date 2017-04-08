@@ -1,6 +1,6 @@
 ---
 external help file: download-help.xml
-online version: https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Expand-DownloadedArchive.md
+online version: https://github.com/a4099181/vagrant-provvin/blob/master/docs/Expand-DownloadedArchive.md
 schema: 2.0.0
 ---
 
@@ -72,6 +72,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Expand-DownloadedArchive.md](https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Expand-DownloadedArchive.md)
+[https://github.com/a4099181/vagrant-provvin/blob/master/docs/Expand-DownloadedArchive.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Expand-DownloadedArchive.md)
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/download.psm1](https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/download.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/download.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/download.psm1)

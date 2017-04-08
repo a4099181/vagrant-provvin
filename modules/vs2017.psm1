@@ -21,10 +21,10 @@ Function Install-VisualStudio2017
     Installer URI to download it from.
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Install-VisualStudio2017.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-VisualStudio2017.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/vs2017.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vs2017.psm1
 
     .LINK
     https://www.visualstudio.com/en-us/productinfo/vs2017-install-product--list
@@ -72,10 +72,10 @@ Function Install-VisualStudio2017Extensions
     Configuration file.
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Install-VisualStudio2017Extensions.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-VisualStudio2017Extensions.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/vs2017.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vs2017.psm1
 #>
     Param ( [Parameter(Mandatory=$true)][String] $CfgFile )
 
@@ -123,10 +123,10 @@ Function Install-VisualStudio2017Packages
     Configuration file.
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Install-VisualStudio2017Packages.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-VisualStudio2017Packages.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/vs2017.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vs2017.psm1
 
     .LINK
     https://chocolatey.org/packages

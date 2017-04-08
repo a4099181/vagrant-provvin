@@ -76,10 +76,10 @@ Function New-EncryptionKey
     Byte[] - Encryption key to use with SecureString.
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/New-EncryptionKey.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/New-EncryptionKey.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/crypto.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/crypto.psm1
 #>
 
 Param ( [Parameter(Mandatory=$true)][String] $InputFile )

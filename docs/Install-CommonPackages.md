@@ -1,6 +1,6 @@
 ---
 external help file: chocolatey-help.xml
-online version: https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Install-CommonPackages.md
+online version: https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-CommonPackages.md
 schema: 2.0.0
 ---
 
@@ -72,8 +72,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Install-CommonPackages.md](https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Install-CommonPackages.md)
+[https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-CommonPackages.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-CommonPackages.md)
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/chocolatey.psm1](https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/chocolatey.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/chocolatey.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/chocolatey.psm1)
 
 [https://chocolatey.org/packages](https://chocolatey.org/packages)

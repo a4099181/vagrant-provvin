@@ -21,16 +21,16 @@ Function Connect-Vpn
     VPN connection name to connect.
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Connect-Vpn.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Connect-Vpn.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/New-EncryptionKey.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/New-EncryptionKey.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Protect-Config.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/vpn.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vpn.psm1
 #>
     Param ( [Parameter(Mandatory=$true)][String] $CfgFile
           , [Parameter(Mandatory=$true)][String] $KeyFile
@@ -75,10 +75,10 @@ Function Add-VpnConnectionTriggers
     Please note, that universal app are searched using .EndsWith(<param-value>) function.
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-VpnConnectionTriggers.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-VpnConnectionTriggers.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/vpn.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vpn.psm1
 #>
     Param ( [Parameter(Mandatory=$true)][String] $ConnectionName
           , [String[]] $ExecutablePaths=( ${env:ProgramFiles(x86)}, $env:ProgramW6432 , $env:USERPROFILE, "$env:windir\System32" )

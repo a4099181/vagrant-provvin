@@ -32,10 +32,10 @@
     File extensions to exclude within Windows Defender.
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-WindowsDefenderExclusions.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-WindowsDefenderExclusions.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/defender.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/defender.psm1
 #>
     Param ( [String[]] $ProcessesPaths = ( ${env:ProgramFiles(x86)}, $env:ProgramW6432 )
           , [String[]] $ProcessesList = ( 'msbuild.exe', 'devenv.exe', 'sqlcmd.exe', 'sqllocaldb.exe', 'sqlservr.exe', 'sqlwriter.exe')

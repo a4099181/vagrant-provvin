@@ -14,10 +14,10 @@ Function Install-VisualStudioCodeExtensions
     Configuration file.
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Install-VisualStudioCodeExtensions.md
+    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-VisualStudioCodeExtensions.md
 
     .LINK
-    https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/vscode.psm1
+    https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vscode.psm1
 #>
     Param ( [Parameter(Mandatory=$true)][String] $CfgFile )
 

@@ -1,6 +1,6 @@
 ---
 external help file: extend-PATH-environment-variable-help.xml
-online version: https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-SystemPath.md
+online version: https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-SystemPath.md
 schema: 2.0.0
 ---
 
@@ -57,6 +57,6 @@ Author: bryjamus \<bryjamus@gmail.com\>
 
 ## RELATED LINKS
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-SystemPath.md](https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-SystemPath.md)
+[https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-SystemPath.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-SystemPath.md)
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/extend-PATH-environment-variable.psm1](https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/extend-PATH-environment-variable.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/extend-PATH-environment-variable.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/extend-PATH-environment-variable.psm1)

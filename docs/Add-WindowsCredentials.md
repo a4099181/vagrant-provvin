@@ -1,6 +1,6 @@
 ---
 external help file: vault-help.xml
-online version: https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-WindowsCredentials.md
+online version: https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-WindowsCredentials.md
 schema: 2.0.0
 ---
 
@@ -96,11 +96,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-WindowsCredentials.md](https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Add-WindowsCredentials.md)
+[https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-WindowsCredentials.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Add-WindowsCredentials.md)
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/docs/New-EncryptionKey.md](https://github.com/a4099181/vagrant-officeVM/blob/master/docs/New-EncryptionKey.md)
+[https://github.com/a4099181/vagrant-provvin/blob/master/docs/New-EncryptionKey.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/New-EncryptionKey.md)
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Protect-Config.md](https://github.com/a4099181/vagrant-officeVM/blob/master/docs/Protect-Config.md)
+[https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md](https://github.com/a4099181/vagrant-provvin/blob/master/docs/Protect-Config.md)
 
-[https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/vault.psm1](https://github.com/a4099181/vagrant-officeVM/blob/master/provision/powershell/vault.psm1)
+[https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vault.psm1](https://github.com/a4099181/vagrant-provvin/blob/master/provision/powershell/vault.psm1)
 
