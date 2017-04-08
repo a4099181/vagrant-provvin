@@ -66,18 +66,18 @@ PowerShellVersion = '3.0'
 # FormatsToProcess = @()
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-NestedModules = @( 'chocolatey.psm1'
-    , 'config.psm1'
-    , 'crypto.psm1'
-    , 'defender.psm1'
-    , 'download.psm1'
-    , 'extend-PATH-environment-variable.psm1'
-    , 'git-clone.psm1'
-    , 'map-drives.psm1'
-    , 'vault.psm1'
-    , 'vpn.psm1'
-    , 'vscode.psm1'
-    , 'vs2017.psm1'
+NestedModules = @( 'modules\chocolatey.psm1'
+    , 'modules\config.psm1'
+    , 'modules\crypto.psm1'
+    , 'modules\defender.psm1'
+    , 'modules\download.psm1'
+    , 'modules\extend-PATH-environment-variable.psm1'
+    , 'modules\git-clone.psm1'
+    , 'modules\map-drives.psm1'
+    , 'modules\vault.psm1'
+    , 'modules\vpn.psm1'
+    , 'modules\vscode.psm1'
+    , 'modules\vs2017.psm1'
 )
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
