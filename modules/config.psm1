@@ -52,7 +52,16 @@
             $cmmn.Merge( $other, $sets )
         }
 
-    return $cmmn.ToString()
+    $merged = $cmmn.ToString() | ConvertFrom-Json
+
+    $merged.chocolatey.packages        = Remove-Disabled $merged.chocolatey.packages        id
+    $merged.vscode.extensions          = Remove-Disabled $merged.vscode.extensions          name
+    $merged.vs2017.components          = Remove-Disabled $merged.vs2017.components          id
+    $merged.vs2017.extensions          = Remove-Disabled $merged.vs2017.extensions          name
+    $merged.vs2017.chocolatey.packages = Remove-Disabled $merged.vs2017.chocolatey.packages id
+    $merged.repos                      = Remove-Disabled $merged.repos                      url
+
+    $merged | ConvertTo-Json -Depth 4
 }
 
 Function Protect-Config
@@ -151,4 +160,16 @@ Param ( [Parameter(Mandatory=$true)][String] $CfgFile
     {
         Throw
     }
+}
+
+Function Remove-Disabled
+{
+    Param ( [Parameter(Mandatory=$true)] [PsCustomObject] $merged,
+            [Parameter(Mandatory=$true)]                  $id )
+
+    $disabled = $merged | group disabled
+
+    $disabled[ $false ] |
+        Select-Object -expand Group |
+        ? $id -NotIn ( $disabled[ $true ] | Select-Object -expand Group | Select-Object -expand $id )
 }
