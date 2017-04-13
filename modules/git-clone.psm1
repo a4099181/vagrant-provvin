@@ -1,3 +1,11 @@
+Function Local:Get-GitExecutable
+{
+    Get-Command -Name git-cmd, git -ErrorAction SilentlyContinue |
+        ForEach-Object { @{ Parent=([System.IO.Path]::GetDirectoryName( $_.Path ) ) } } |
+        ForEach-Object { Get-ChildItem $_.Parent -File -Filter git.exe -Recurse} |
+        Select-Object -First 1
+}
+
 Function Invoke-GitConfig
 {
 <#
@@ -14,15 +22,20 @@ Function Invoke-GitConfig
     PSCustomObject (Json object)
 #>
     Param ( [Parameter(Mandatory=$true)][String] $RepositoryFolder,
-        [Parameter(Mandatory=$true, ValueFromPipeline=$true)] $Json
-     )
+        [Parameter(Mandatory=$true, ValueFromPipeline=$true)] $Json,
+        [Object] $GitExe = ( Get-GitExecutable ) )
 
     Process
     {
         $Json.psobject.Properties |
             ForEach-Object {
                 $key = $_.Name.Replace( "-", ".")
-                git -C $RepositoryFolder config $key $_.Value
+                Start-Process -FilePath $GitExe.FullName `
+                          -ArgumentList "-C $RepositoryFolder config $key $($_.Value)" `
+                          -WorkingDirectory $RepositoryFolder `
+                          -NoNewWindow `
+                          -PassThru `
+                          -Wait
             }
     }
 }
@@ -40,6 +53,7 @@ Function Copy-GitRepositories
     * skips repositories marked as disabled,
     * clones each repository left,
     * uses a git that should be already provisioned and accessible,
+    * supports Git for Windows and Git for Windows Portable
     * clones the repositories into specified destination folder,
     * initializes submodules within repositories.
 
@@ -67,7 +81,8 @@ Function Copy-GitRepositories
     Param (
         [Parameter(Mandatory=$true)][String] $CfgFile,
         [Parameter(Mandatory=$true)] [String] $KeyFile,
-        [String] $DestinationFolder = ( Join-Path $env:UserProfile 'MyProjects' ) )
+        [String] $DestinationFolder = ( Join-Path $env:UserProfile 'MyProjects' ),
+        [Object] $GitExe = ( Get-GitExecutable ) )
 
     if ((Test-Path $DestinationFolder)-eq 0)
     {
@@ -77,7 +92,7 @@ Function Copy-GitRepositories
     ( Get-Content $CfgFile | ConvertFrom-Json ).repos |
         Where-Object { -Not $_.disabled } |
         ForEach-Object {
-            Start-Process -FilePath 'git' `
+            Start-Process -FilePath $GitExe.FullName `
                           -ArgumentList "clone --recursive $($_.url)" `
                           -WorkingDirectory $DestinationFolder `
                           -NoNewWindow `
