@@ -97,6 +97,7 @@ FunctionsToExport = @( 'Add-SystemPath'
     , 'Merge-ConfigurationFiles'
     , 'New-EncryptionKey'
     , 'Protect-Config'
+    , 'Reset-GitAutoCrLf'
     , 'Unprotect-Config'
     )
 

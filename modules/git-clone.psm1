@@ -3,7 +3,31 @@ Function Local:Get-GitExecutable
     Get-Command -Name git-cmd, git -ErrorAction SilentlyContinue |
         ForEach-Object { @{ Parent=([System.IO.Path]::GetDirectoryName( $_.Path ) ) } } |
         ForEach-Object { Get-ChildItem $_.Parent -File -Filter git.exe -Recurse} |
-        Select-Object -First 1
+        Select-Object -ExpandProperty FullName -First 1
+}
+
+Function Reset-GitAutoCrLf
+{
+<#
+    .SYNOPSIS
+    Removes configurations settings: core.autocrlf.
+    Supports:
+    - Git for Windows,
+    - Git for Windows Portable.
+
+    .PARAMETER CfgFile
+    Git configuration file.
+
+    .INPUTS
+    FileInfo
+#>
+    Param ( [Parameter(Mandatory=$true, ValueFromPipeline=$true)] [System.IO.FileInfo] $CfgFile,
+        [String] $GitExe = ( Get-GitExecutable ) )
+
+    Start-Process -FilePath $GitExe `
+        -ArgumentList "config --file `"$($CfgFile.FullName)`" --unset core.autocrlf" `
+        -NoNewWindow `
+        -Wait
 }
 
 Function Invoke-GitConfig
@@ -23,18 +47,17 @@ Function Invoke-GitConfig
 #>
     Param ( [Parameter(Mandatory=$true)][String] $RepositoryFolder,
         [Parameter(Mandatory=$true, ValueFromPipeline=$true)] $Json,
-        [Object] $GitExe = ( Get-GitExecutable ) )
+        [String] $GitExe = ( Get-GitExecutable ) )
 
     Process
     {
         $Json.psobject.Properties |
             ForEach-Object {
                 $key = $_.Name.Replace( "-", ".")
-                Start-Process -FilePath $GitExe.FullName `
+                Start-Process -FilePath $GitExe `
                           -ArgumentList "-C $RepositoryFolder config $key $($_.Value)" `
                           -WorkingDirectory $RepositoryFolder `
                           -NoNewWindow `
-                          -PassThru `
                           -Wait
             }
     }
@@ -82,7 +105,7 @@ Function Copy-GitRepositories
         [Parameter(Mandatory=$true)][String] $CfgFile,
         [Parameter(Mandatory=$true)] [String] $KeyFile,
         [String] $DestinationFolder = ( Join-Path $env:UserProfile 'MyProjects' ),
-        [Object] $GitExe = ( Get-GitExecutable ) )
+        [String] $GitExe = ( Get-GitExecutable ) )
 
     if ((Test-Path $DestinationFolder)-eq 0)
     {
@@ -92,11 +115,10 @@ Function Copy-GitRepositories
     ( Get-Content $CfgFile | ConvertFrom-Json ).repos |
         Where-Object { -Not $_.disabled } |
         ForEach-Object {
-            Start-Process -FilePath $GitExe.FullName `
+            Start-Process -FilePath $GitExe `
                           -ArgumentList "clone --recursive $($_.url)" `
                           -WorkingDirectory $DestinationFolder `
                           -NoNewWindow `
-                          -PassThru `
                           -Wait
 
             If ( $_.secret )
