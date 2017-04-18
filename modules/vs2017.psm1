@@ -85,9 +85,14 @@ Function Install-VisualStudio2017Extensions
     {
         $temp      = Join-Path $env:LOCALAPPDATA 'Temp'
         $gallery   = 'https://marketplace.visualstudio.com/_apis/public/gallery/publishers/'
-        $installer = Get-ChildItem -Path ${env:ProgramFiles(x86)} -Recurse `
-                            -Filter "VSIXInstaller.exe" |
-                        Select-Object -ExpandProperty FullName -First 1
+        $exe       = Get-ChildItem -Path ${env:ProgramFiles(x86)} -Recurse `
+                            -Include "devenv.exe", "VSIXInstaller.exe" |
+                        Group-Object BaseName -AsHashTable -AsString
+        $installer = $exe[ "VSIXInstaller" ] |
+            Select-Object -ExpandProperty FullName -First 1
+        $appid     = $exe[ "devenv" ] |
+            Select-Object -First 1
+        $vsNames   = $appid.FullName.Split("\")
 
         $cfg.vs2017.extensions |
             Where-Object   { -Not $_.disabled } |
@@ -95,13 +100,18 @@ Function Install-VisualStudio2017Extensions
                 $out  = Join-Path         $temp "$($_.publisher).$($_.name).vsix"
                 $uri  = "$($gallery)$($_.publisher)/vsextensions/$($_.name)/latest/vspackage"
 
+                Write-Host $out
                 Invoke-WebRequest -Uri  $uri `
                                   -OutFile $out
-                Start-Process     -FilePath $installer `
-                                  -ArgumentList "/quiet", $out `
-                                  -NoNewWindow `
-                                  -PassThru `
-                                  -Wait
+                if ( $? )
+                {
+                    Start-Process -FilePath $installer -ArgumentList `
+                                  "/appidinstallpath:`"$($appid.FullName)`"",
+                                  "/appidname:`"$($vsNames[ $vsNames.Length-6 ]) $($vsNames[ $vsNames.Length-4 ]) $($vsNames[ $vsNames.Length-5 ])`"",
+                                  "/skuName:$($vsNames[$vsNames.Length-4])",
+                                  "/skuVersion:$($appid.VersionInfo.ProductVersion)",
+                                  "/quiet", $out -NoNewWindow -Wait
+                }
         }
     }
 }
