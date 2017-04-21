@@ -55,7 +55,7 @@ Function Invoke-GitConfig
             ForEach-Object {
                 $key = $_.Name.Replace( "-", ".")
                 Start-Process -FilePath $GitExe `
-                          -ArgumentList "-C $RepositoryFolder config $key $($_.Value)" `
+                          -ArgumentList "-C $RepositoryFolder config $key `"$($_.Value)`"" `
                           -WorkingDirectory $RepositoryFolder `
                           -NoNewWindow `
                           -Wait
