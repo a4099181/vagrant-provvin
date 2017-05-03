@@ -116,7 +116,7 @@ Function Copy-GitRepositories
         Where-Object { -Not $_.disabled } |
         ForEach-Object {
             Start-Process -FilePath $GitExe `
-                          -ArgumentList "clone --recursive $($_.url)" `
+                          -ArgumentList "clone -q --recursive $($_.url)" `
                           -WorkingDirectory $DestinationFolder `
                           -NoNewWindow `
                           -Wait
