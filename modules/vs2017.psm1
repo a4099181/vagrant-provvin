@@ -149,6 +149,6 @@ Function Install-VisualStudio2017Packages
     {
         $cfg.vs2017.chocolatey.packages |
             Where-Object   { -Not $_.disabled } |
-            ForEach-Object { cinst --limit-output --ignore-checksums --allow-empty-checksums -y $_.id }
+            ForEach-Object { cinst --no-progress --limit-output --ignore-checksums --allow-empty-checksums -y $_.id }
     }
 }
