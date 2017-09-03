@@ -103,8 +103,7 @@ Param ( [Parameter(Mandatory=$true)][String] $CfgFile
         $jsn = Get-Content $CfgFile | ConvertFrom-Json
 
         @( $jsn.drives, $jsn.vault, $jsn.repos ) |
-            ForEach-Object { $_.secret | Encrypt $KeyFile }
-
+            ForEach-Object { $_.secret | ?{ $_ -ne $null } | Encrypt $KeyFile }
         ConvertTo-Json $jsn -Depth 4 | Out-File -Encoding utf8 $CfgFile
     }
     Catch
@@ -152,7 +151,7 @@ Param ( [Parameter(Mandatory=$true)][String] $CfgFile
         $jsn = Get-Content $CfgFile | ConvertFrom-Json
 
         @( $jsn.drives, $jsn.vault, $jsn.repos ) |
-            ForEach-Object { $_.secret | Decrypt $KeyFile }
+            ForEach-Object { $_.secret | ?{ $_ -ne $null } | Decrypt $KeyFile }
 
         ConvertTo-Json $jsn -Depth 4 | Out-File -Encoding utf8 $CfgFile
     }
