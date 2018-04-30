@@ -90,9 +90,6 @@ Function Install-VisualStudio2017Extensions
                         Group-Object BaseName -AsHashTable -AsString
         $installer = $exe[ "VSIXInstaller" ] |
             Select-Object -ExpandProperty FullName -First 1
-        $appid     = $exe[ "devenv" ] |
-            Select-Object -First 1
-        $vsNames   = $appid.FullName.Split("\")
 
         $cfg.vs2017.extensions |
             Where-Object   { -Not $_.disabled } |
@@ -106,10 +103,6 @@ Function Install-VisualStudio2017Extensions
                 if ( $? )
                 {
                     Start-Process -FilePath $installer -ArgumentList `
-                                  "/appidinstallpath:`"$($appid.FullName)`"",
-                                  "/appidname:`"$($vsNames[ $vsNames.Length-6 ]) $($vsNames[ $vsNames.Length-4 ]) $($vsNames[ $vsNames.Length-5 ])`"",
-                                  "/skuName:$($vsNames[$vsNames.Length-4])",
-                                  "/skuVersion:$($appid.VersionInfo.ProductVersion)",
                                   "/quiet", $out -NoNewWindow -Wait
                 }
         }
