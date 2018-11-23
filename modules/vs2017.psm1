@@ -104,6 +104,7 @@ Function Install-VisualStudio2017Extensions
                 {
                     Start-Process -FilePath $installer -ArgumentList `
                                   "/quiet", $out -NoNewWindow -Wait
+                    Start-Sleep -Seconds ( Get-Random -Minimum 151 -Maximum 180 )
                 }
         }
     }
