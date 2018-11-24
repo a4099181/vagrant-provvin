@@ -124,7 +124,7 @@ Function Copy-GitRepositories
             If ( $_.secret )
             {
                 $_.secret | Decrypt $KeyFile
-                $subdir = ( [IO.FileInfo] ( [ URI ] $_.url).AbsolutePath ).BaseName
+                $subdir = $_.url.Split('/') | select -Last 1 | % { $_.TrimEnd(".git") }
                 $_.secret | Invoke-GitConfig ( Join-Path $DestinationFolder $subdir )
             }
         }
