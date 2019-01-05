@@ -47,6 +47,7 @@ Function Add-DriveMappings
         Where-Object { -Not $_.disabled } |
         ForEach-Object {
             Start-Process powershell -Credential $cred -LoadUserProfile -NoNewWindow -Wait `
+            -ArgumentList "-NoProfile", `
 @"
             New-SmbMapping -LocalPath $($_.local) -RemotePath $($_.secret.remote) ``
                 -Persistent `$True -SaveCredentials
