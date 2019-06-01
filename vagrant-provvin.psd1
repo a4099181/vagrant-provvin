@@ -79,6 +79,7 @@ NestedModules = @( 'modules\chocolatey.psm1'
     , 'modules\vpn.psm1'
     , 'modules\vscode.psm1'
     , 'modules\vs2017.psm1'
+    , 'modules\vs2019.psm1'
 )
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
@@ -95,6 +96,9 @@ FunctionsToExport = @( 'Add-SystemPath'
     , 'Install-VisualStudio2017'
     , 'Install-VisualStudio2017Extensions'
     , 'Install-VisualStudio2017Packages'
+    , 'Install-VisualStudio2019'
+    , 'Install-VisualStudio2019Extensions'
+    , 'Install-VisualStudio2019Packages'
     , 'Merge-ConfigurationFiles'
     , 'New-EncryptionKey'
     , 'Protect-Config'
