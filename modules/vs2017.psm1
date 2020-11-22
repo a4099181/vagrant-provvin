@@ -53,63 +53,6 @@ Function Install-VisualStudio2017
     }
 }
 
-Function Install-VisualStudio2017Extensions
-{
-<#
-    .SYNOPSIS
-    This function installs Visual Studio 2017 extensions enumerated in configuration file.
-
-    .DESCRIPTION
-    This function in details:
-    * takes a Visual Studio extensions list to install from configuration file,
-    * skips extensions marked as disabled,
-    * downloads all extensions left from Visual Studio Gallery,
-    * executes installer for each downloaded extension.
-
-    This script is designed to work with Visual Studio Marketplace.
-
-    .PARAMETER CfgFile
-    Configuration file.
-
-    .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/docs/Install-VisualStudio2017Extensions.md
-
-    .LINK
-    https://github.com/a4099181/vagrant-provvin/blob/master/modules/vs2017.psm1
-#>
-    Param ( [Parameter(Mandatory=$true)][String] $CfgFile )
-
-    $cfg = Get-Content $CfgFile | ConvertFrom-Json
-
-    if ( -Not $cfg.vs2017.disabled )
-    {
-        $temp      = Join-Path $env:LOCALAPPDATA 'Temp'
-        $gallery   = 'https://marketplace.visualstudio.com/_apis/public/gallery/publishers/'
-        $exe       = Get-ChildItem -Path ${env:ProgramFiles(x86)} -Recurse `
-                            -Include "devenv.exe", "VSIXInstaller.exe" |
-                        Group-Object BaseName -AsHashTable -AsString
-        $installer = $exe[ "VSIXInstaller" ] |
-            Select-Object -ExpandProperty FullName -First 1
-
-        $cfg.vs2017.extensions |
-            Where-Object   { -Not $_.disabled } |
-            ForEach-Object {
-                $out  = Join-Path         $temp "$($_.publisher).$($_.name).vsix"
-                $uri  = "$($gallery)$($_.publisher)/vsextensions/$($_.name)/latest/vspackage"
-
-                Write-Host $out
-                Invoke-WebRequest -Uri  $uri `
-                                  -OutFile $out
-                if ( $? )
-                {
-                    Start-Process -FilePath $installer -ArgumentList `
-                                  "/quiet", $out -NoNewWindow -Wait
-                    Start-Sleep -Seconds ( Get-Random -Minimum 151 -Maximum 180 )
-                }
-        }
-    }
-}
-
 Function Install-VisualStudio2017Packages
 {
 <#
