@@ -27,5 +27,12 @@ Function Install-CommonPackages
 
     ( Get-Content $CfgFile | ConvertFrom-Json ).chocolatey.packages |
         Where-Object   { -Not $_.disabled } |
-        ForEach-Object { cinst --no-progress --limit-output --allow-empty-checksums -y $_.id }
+        ForEach-Object {
+            if ( $_.version ) {
+                cinst --no-progress --limit-output --allow-empty-checksums -y $_.id --version $_.version
+            }
+            else {
+                cinst --no-progress --limit-output --allow-empty-checksums -y $_.id
+            }
+        }
 }
