@@ -6,30 +6,6 @@ Function Local:Get-GitExecutable
         Select-Object -ExpandProperty FullName -First 1
 }
 
-Function Reset-GitAutoCrLf
-{
-<#
-    .SYNOPSIS
-    Removes configurations settings: core.autocrlf.
-    Supports:
-    - Git for Windows,
-    - Git for Windows Portable.
-
-    .PARAMETER CfgFile
-    Git configuration file.
-
-    .INPUTS
-    FileInfo
-#>
-    Param ( [Parameter(Mandatory=$true, ValueFromPipeline=$true)] [System.IO.FileInfo] $CfgFile,
-        [String] $GitExe = ( Get-GitExecutable ) )
-
-    Start-Process -FilePath $GitExe `
-        -ArgumentList "config --file `"$($CfgFile.FullName)`" --unset core.autocrlf" `
-        -NoNewWindow `
-        -Wait
-}
-
 Function Invoke-GitConfig
 {
 <#
