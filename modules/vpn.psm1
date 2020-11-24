@@ -82,7 +82,7 @@ Function Add-VpnConnectionTriggers
 #>
     Param ( [Parameter(Mandatory=$true)][String] $ConnectionName
           , [String[]] $ExecutablePaths=( ${env:ProgramFiles(x86)}, $env:ProgramW6432 , $env:USERPROFILE, "$env:windir\System32" )
-          , [String[]] $Executables=( 'devenv.exe', 'eTask.exe', 'mintty.exe', 'mstsc.exe', 'powershell.exe' )
+          , [String[]] $Executables=( 'devenv.exe', 'eTask.exe', 'mintty.exe', 'mstsc.exe', 'powershell.exe', 'pwsh.exe' )
           , [String[]] $UniversalApps=( '.MicrosoftEdge' ) )
 
     $current = Get-VpnConnectionTrigger "$connectionName" |

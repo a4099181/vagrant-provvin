@@ -38,7 +38,7 @@
     https://github.com/a4099181/vagrant-provvin/blob/master/modules/defender.psm1
 #>
     Param ( [String[]] $ProcessesPaths = ( ${env:ProgramFiles(x86)}, $env:ProgramW6432 )
-          , [String[]] $ProcessesList = ( 'msbuild.exe', 'devenv.exe', 'sqlcmd.exe', 'sqllocaldb.exe', 'sqlservr.exe', 'sqlwriter.exe')
+          , [String[]] $ProcessesList = ( 'msbuild.exe', 'devenv.exe', 'powershell.exe', 'pwsh.exe', 'sqlcmd.exe', 'sqllocaldb.exe', 'sqlservr.exe', 'sqlwriter.exe')
           , [String[]] $FoldersPaths = ( $env:USERPROFILE )
           , [String[]] $FoldersList = ( 'MyProjects', '.nuget', '.babun' )
           , [String[]] $FilesList = ( 'C:\pagefile.sys' )
