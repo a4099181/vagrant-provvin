@@ -56,9 +56,6 @@
 
     $merged.chocolatey.packages        = Remove-Disabled $merged.chocolatey.packages        id
     $merged.vscode.extensions          = Remove-Disabled $merged.vscode.extensions          name
-    $merged.vs2017.components          = Remove-Disabled $merged.vs2017.components          id
-    $merged.vs2017.extensions          = Remove-Disabled $merged.vs2017.extensions          name
-    $merged.vs2017.chocolatey.packages = Remove-Disabled $merged.vs2017.chocolatey.packages id
     $merged.repos                      = Remove-Disabled $merged.repos                      url
 
     $merged | ConvertTo-Json -Depth 4
