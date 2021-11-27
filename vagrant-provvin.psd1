@@ -78,7 +78,6 @@ NestedModules = @( 'modules\chocolatey.psm1'
     , 'modules\vault.psm1'
     , 'modules\vpn.psm1'
     , 'modules\vscode.psm1'
-    , 'modules\vs2017.psm1'
     , 'modules\vs2019.psm1'
 )
 
