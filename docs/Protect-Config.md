@@ -17,7 +17,7 @@ Protect-Config [-CfgFile] <String> [-KeyFile] <String> [<CommonParameters>]
 
 ## DESCRIPTION
 This function in details:
-* searches for encryptable objects: drives, vault,
+* searches for encryptable objects: vault,
 * encrypts secret objects inside objects found,
 * it overwrites plain config file with the encrypted one.
 

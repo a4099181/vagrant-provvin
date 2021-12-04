@@ -105,7 +105,7 @@
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>This function in details: * searches for encryptable objects: drives, vault,
+<maml:description><maml:para>This function in details: * searches for encryptable objects: vault,
 </maml:para>
 <maml:para>* encrypts secret objects inside objects found,
 </maml:para>
@@ -189,7 +189,7 @@
 </maml:para>
 </maml:description>
 </command:details>
-<maml:description><maml:para>This function in details: * searches for decryptable objects: drives, vault,
+<maml:description><maml:para>This function in details: * searches for decryptable objects: vault,
 </maml:para>
 <maml:para>* decrypts secret objects inside objects found,
 </maml:para>

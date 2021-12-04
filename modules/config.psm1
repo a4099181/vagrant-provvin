@@ -69,7 +69,7 @@ Function Protect-Config
 
     .DESCRIPTION
     This function in details:
-    * searches for encryptable objects: drives, vault, repos,
+    * searches for encryptable objects: vault, repos,
     * encrypts secret objects inside objects found,
     * it overwrites plain config file with the encrypted one.
 
@@ -99,7 +99,7 @@ Param ( [Parameter(Mandatory=$true)][String] $CfgFile
     {
         $jsn = Get-Content $CfgFile | ConvertFrom-Json
 
-        @( $jsn.drives, $jsn.vault, $jsn.repos ) |
+        @( $jsn.vault, $jsn.repos ) |
             ForEach-Object { $_.secret | ?{ $_ -ne $null } | Encrypt $KeyFile }
         ConvertTo-Json $jsn -Depth 4 | Out-File -Encoding utf8 $CfgFile
     }
@@ -117,7 +117,7 @@ Function Unprotect-Config
 
     .DESCRIPTION
     This function in details:
-    * searches for decryptable objects: drives, vault, repos,
+    * searches for decryptable objects: vault, repos,
     * decrypts secret objects inside objects found,
     * it overwrites encrypted config file with the plain one.
 
@@ -147,7 +147,7 @@ Param ( [Parameter(Mandatory=$true)][String] $CfgFile
     {
         $jsn = Get-Content $CfgFile | ConvertFrom-Json
 
-        @( $jsn.drives, $jsn.vault, $jsn.repos ) |
+        @( $jsn.vault, $jsn.repos ) |
             ForEach-Object { $_.secret | ?{ $_ -ne $null } | Decrypt $KeyFile }
 
         ConvertTo-Json $jsn -Depth 4 | Out-File -Encoding utf8 $CfgFile

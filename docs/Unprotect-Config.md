@@ -17,7 +17,7 @@ Unprotect-Config [-CfgFile] <String> [-KeyFile] <String> [<CommonParameters>]
 
 ## DESCRIPTION
 This function in details:
-* searches for decryptable objects: drives, vault,
+* searches for decryptable objects: vault,
 * decrypts secret objects inside objects found,
 * it overwrites encrypted config file with the plain one.
 
